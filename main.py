@@ -1,5 +1,23 @@
 #!/usr/bin/env python
-
+"""
+  -h, --help            show this help message and exit
+  -n [int], --N [int]   Number of cases, [1,2,3,4...]
+  -a {male,female,all}, --average-age {male,female,all}
+                        Shows average female and male age,
+                        ['male','female','all']
+  -p {male,female}, --percent-gender {male,female}
+                        Gives percents of female or male back in database
+  -m {city,password}, --most-common {city,password}
+                        Shows the most popular city and password. Optionally
+                        we can add attribute -n, -N
+  -dob [YYYY-MM-DD] [YYYY-MM-DD], --DOB [YYYY-MM-DD] [YYYY-MM-DD]
+                        Shows the number of people who were born between
+                        [start_data] and [end_data]
+  -pr, --protect-password
+                        Documentation
+  -c, --create-database
+                        Create database with '\data\persons.json'
+"""
 # Standard module
 import argparse
 import json

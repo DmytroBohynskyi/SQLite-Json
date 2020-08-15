@@ -1,10 +1,11 @@
 # SQL_JSON
 ## Jak postawić projekt 
-Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 oraz biblioteki  peewee.
+Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki  peewee Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki peewee
+toraz qdm.
 
-Dla urochumienia projektu jedynie trzeba zainstalować moduł peewee.q
+Dla uruchomienia projektu jedynie trzeba skorzystać z poniższego polecenia.
 ```commandline
-pip install peewee
+pip install -r requirements.txt
 ```
 
 ## Dostępne komendy
