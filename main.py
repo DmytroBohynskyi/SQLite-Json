@@ -21,6 +21,7 @@
 # Standard module
 import argparse
 import json
+import os
 from datetime import datetime
 
 from tqdm import tqdm
@@ -120,6 +121,8 @@ def create_db(func):
 
     def wrapper(*args, **kwargs):
         query: dict = func(*args, **kwargs)  # open .json
+        # Init data base if he isn't in this dir.
+        db.init_db() if db.DB_NAME not in os.listdir() else None
         # Create database
         for data in tqdm(query['results']):
             db.create_db(db.Person, data)  # creates new entry in Person table

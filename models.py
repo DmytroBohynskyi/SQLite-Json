@@ -2,8 +2,9 @@
 Documentation
 """
 from peewee import SqliteDatabase, CharField, IntegerField, Model, DateField, ForeignKeyField, DateTimeField
-from peewee import *
-db = SqliteDatabase('people.db')
+
+DB_NAME = 'people.db'
+db = SqliteDatabase(DB_NAME)
 
 
 # ===============================================================
