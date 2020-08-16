@@ -4,6 +4,8 @@ import string
 from datetime import datetime
 
 # My module
+from peewee import fn
+
 from models import *
 
 DICT_TABLE_NAME = {
@@ -98,7 +100,7 @@ def select_age(gender: str) -> None:
     else:
         query = Person.select(fn.avg(DOB.age).alias('age')).join(DOB)
 
-    print(f"The average age of {gender} is {query.age}").first()
+    print(f"The average age of {gender} is {query.age}")
 
 
 def select_popular(number_of_responses: int, select_type: str) -> None:

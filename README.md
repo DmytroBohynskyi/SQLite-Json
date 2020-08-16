@@ -1,7 +1,7 @@
 # SQL_JSON
 ## Jak postawić projekt 
-Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki  peewee Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki peewee
-toraz qdm.
+Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki peewee, requests
+oraz qdm.
 
 Dla uruchomienia projektu jedynie trzeba skorzystać z poniższego polecenia.
 ```commandline
@@ -27,6 +27,7 @@ pip install -r requirements.txt
                         Documentation
   -c, --create-database
                         Create database with '\data\persons.json'
+ -ce, --create-entry   Creates entry with https://randomuser.me/api/
 ```
 ### Zapis pliku .json do bazy danych
 Dla przeprowadzenia tej operacji używamy jedynie flagi ``-c`` albo ``--create-database``.

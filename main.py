@@ -17,6 +17,7 @@
                         Documentation
   -c, --create-database
                         Create database with '\data\persons.json'
+ -ce, --create-entry   Creates entry with https://randomuser.me/api/
 """
 # Standard module
 import argparse
@@ -24,6 +25,7 @@ import json
 import os
 from datetime import datetime
 
+import requests
 from tqdm import tqdm
 
 # My module
@@ -33,6 +35,9 @@ __author__ = "Dmytro Bohynskyi"
 __version__ = "2.0.0"
 __email__ = "bohynskyi@gmial.com"
 __status__ = "Production"
+
+# Static file
+URL = "https://randomuser.me/api/"
 
 
 # ---------------------------------------------------------------------
@@ -148,10 +153,24 @@ def load_json(path_json: str = "data/persons.json") -> dict:
     return data
 
 
-if __name__ == '__main__':
-    # ---------------------------------------------------------------------
-    #                          -- ARGPARSE --
-    # ---------------------------------------------------------------------
+# ---------------------------------------------------------------------
+#                          -- Randomuser API --
+# ---------------------------------------------------------------------
+@create_db
+@change_data
+def api_requests() -> dict:
+    """
+    This function is dealing with JSON data {{ randomuser API }}
+    """
+    r = requests.get(URL)  # get data with https://randomuser.me/api/
+    r_json = r.json()  # JSON decoding
+    return r_json
+
+
+# ---------------------------------------------------------------------
+#                          -- ARGPARSE --
+# ---------------------------------------------------------------------
+def argparse_function() -> None:
     parser = argparse.ArgumentParser(description='List the options:')
 
     # Optionals
@@ -171,6 +190,8 @@ if __name__ == '__main__':
                         action="store_true")
     parser.add_argument('-c', "--create-database", help="Creates database with '\data\persons.json'",
                         action="store_true")
+    parser.add_argument('-ce', "--create-entry", help="Creates entry with https://randomuser.me/api/",
+                        action="store_true")
 
     args = parser.parse_args()
 
@@ -187,4 +208,8 @@ if __name__ == '__main__':
     elif args.create_database:
         load_json()
     else:
-        load_json()
+        api_requests()
+
+
+if __name__ == '__main__':
+    argparse_function()  # open argparse function
