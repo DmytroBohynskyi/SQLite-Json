@@ -1,4 +1,27 @@
-# SQL_JSON
+# Zadanie
+
+1. Wczytanie danych z pliku *persons.json* do bazy danych. Przed zapisem do bazy danych:
+  * stwórz dodatkowe pole z liczbą dni pozostałych do urodzin danej osoby
+  * oczyść numer telefonu ze znaków specjalnych (powinny zostać same cyfry)
+  * usuń pole ‘picture’.
+W celach szkoleniowych hasło w postaci plaintext też powinno zostać zapisane w bazie.
+2. Na podstawie danych zapisanych w bazie wyświetl:
+  * procent kobiet i mężczyzn
+  * średnią wieku:
+    * ogólną
+    * kobiet
+    * mężczyzn
+  * **N** najbardziej popularnych miast w formacie: miasto, liczba wystąpień, gdzie **N** to liczba - parametr przekazywany do programu przez użytkownika, czyli np. dla **N** = 5 powinno wyświetlić się 5 miast
+  * **N** najpopularniejszych haseł w formacie: hasło, liczba wystąpień (**N**, analogicznie jak wyżej)
+  * wszystkich użytkowników którzy urodzili się w zakresie dat podanym jako parametr (format daty jest dowolny, może być np. *YYYY-MM-DD*)
+  * najbezpieczniejsze hasło - takie, które uzyska najwięcej punktów, gdzie:
+    * jeśli zawiera przynajmniej jedną małą literę otrzymuje 1 punkt
+    * jeśli zawiera przynajmniej jedną dużą literę otrzymuje 2 punkty
+    * jeśli zawiera przynajmniej jedną cyfrę otrzymuje 1 punkt
+    * jeśli zawiera co najmniej 8 znaków - 5 punktów
+    * jeśli zawiera znak specjalny - 3 punkty
+
+
 ## Jak postawić projekt 
 Project jest napisany przy wykorzystaniu standartowych modułów Python 3.7 biblioteki peewee, requests
 oraz qdm.
