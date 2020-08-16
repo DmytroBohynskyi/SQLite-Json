@@ -6,7 +6,7 @@ from datetime import datetime
 # My module
 from peewee import fn
 
-from models import *
+from module.models import *
 
 DICT_TABLE_NAME = {
     'name': Name,

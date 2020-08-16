@@ -29,7 +29,7 @@ import requests
 from tqdm import tqdm
 
 # My module
-import db
+from module import db
 
 __author__ = "Dmytro Bohynskyi"
 __version__ = "2.0.0"
